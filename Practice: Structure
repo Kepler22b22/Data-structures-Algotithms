@@ -1,0 +1,26 @@
+
+#include <iostream>
+#include<stdio.h>
+using namespace std;
+
+struct Rectangle
+{
+    int length;
+    int breadth;
+}r1, r2;                          %declaration along with defination!
+
+%Struct Rectangle r1, r2, r3;    %declaration can outside the main function;
+
+int main()
+{
+    
+    %Struct Rectangle r1, r2, r3;
+    Struct Rectangle r1={10,5};
+    r1.length=15;                   %use dot to access to number
+    
+    printf("%lu", sizeof(r1));     %answer=8
+    cout<<r1.length<<endl;          %C++ uses cout, while C uses printf, but it's the same
+    cout<<r1.breadth<<endl;
+    
+    return 0;
+}
