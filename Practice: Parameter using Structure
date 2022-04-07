@@ -1,0 +1,89 @@
+// 1
+#include <iostream>
+using namespace std;
+
+struct Rectengle
+{
+    int length;
+    int breadth;
+};
+
+void fun(struct Rectengle r)
+{
+    r.length=20;                                                   // Call by value, won't change the value of main function
+    cout<<"length"<<r.length<<endl<<"Breadth"<<r.breadth<<endl;
+}
+
+int main()
+{
+    
+   struct Rectengle r={10, 5};
+   fun(r);
+   
+   cout<<"length"<<r.length<<endl<<"Breadth"<<r.breadth<<endl;
+
+    return 0;
+}
+
+
+
+
+
+// 2
+#include <iostream>
+using namespace std;
+
+struct Rectengle
+{
+    int length;
+    int breadth;
+};
+
+void fun(struct Rectengle *p)
+{
+    p->length=20;                                                   // Call by address, also change the value of main function
+    cout<<"length"<<p->length<<endl<<"Breadth"<<p->breadth<<endl;
+}
+
+int main()
+{
+    
+   struct Rectengle r={10, 5};
+   fun(&r);
+   
+   cout<<"length"<<r.length<<endl<<"Breadth"<<r.breadth<<endl;
+
+    return 0;
+}
+
+
+
+// 3
+#include <iostream>
+using namespace std;
+
+struct Rectengle
+{
+    int length;
+    int breadth;
+};
+
+struct Rectengle *fun()             // creating a function that is an adress
+{
+    struct Rectengle *p;            // creating a object of type Rectangule using a pointer
+    p = new Rectengle;
+    
+    p->length=15;
+    p->breadth=7;
+    
+    return p; 
+}
+
+int main()
+{
+    struct Rectengle *ptr=fun();
+    
+    cout<<"Length "<<ptr->length<<endl<<"Breadth "<<ptr->breadth<<endl;
+
+    return 0;
+}
