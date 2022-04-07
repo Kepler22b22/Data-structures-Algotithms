@@ -8,7 +8,7 @@ int main()
     int n;
     cout<<"Enter size";
     cin>>n;
-    int A[n]; %variable size arrays cannot be initialized while declaration
+    int A[n]; //variable size arrays cannot be initialized while declaration
     A[0]=1;
     
     for (int x:A)
