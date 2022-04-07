@@ -1,0 +1,68 @@
+
+#include <iostream>
+using namespace std;
+
+int add(int a, int b)
+{
+    int c;
+    c=a+b;
+}
+
+int main()
+{
+    int num1=10, num2=15, sum;      
+    
+    sum = add(num1, num2);
+    
+    cout<<"Sum is "<<sum<<endl;                // pass by value
+  
+    return 0;
+}
+
+
+void swap(int *x, int *y)
+{
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+
+int main()
+{
+    int num1=10, num2=15, sum;
+    
+    sum = swap(&num1, &num2);                 // pass by address  
+    
+    cout<<"First number is "<<num1<<endl;
+    cout<<"Second number is "<< num2<<endl;
+
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+void swap(int &x, int &y)
+{
+    int temp;
+    temp = x;
+    x = y;
+    y = temp;
+}
+
+
+int main()
+{
+    int num1=10, num2=15, sum;
+    
+    sum = swap(num1, num2);                   // call by reference (only available in C++)
+    
+    cout<<"First number is "<<num1<<endl;
+    cout<<"Second number is "<< num2<<endl;
+
+    return 0;
+}
+
