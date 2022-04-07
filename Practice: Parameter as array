@@ -1,0 +1,49 @@
+
+void fun(int A[], int n)    // pass an array as parameter, = void fun(int *A, int n) --> using pointer(star)
+{
+    for(int i=0; i<n; i++)      // cannot use foreach loop, only can use for loop
+    cout<<A[i]<<endl;
+    A[0] = 15;                // Then in the main function, A[0] also will change, because A now is a pointer
+}
+
+
+int main()
+{
+    
+    int A[] = {2, 4, 6, 8, 10};
+    int n = 5;
+    fun(A, n);            // when pass an array as parameter to a function, always passing its size along with it. 
+
+    return 0;
+}
+
+
+
+// Creating an array inside of the function and returning its address (so that we can use this array in anywhere of the main function).
+#include <iostream>
+using namespace std;
+
+int * fun(int size)          // pass an array as parameter
+{
+    int *p;
+    p = new int[size];      // creating an array in Heap
+    
+    for (int i=0; i<size; i++)
+    p[i] = i+1;
+    
+    return p;               // returning an array
+}
+
+
+int main()
+{
+    
+   int *ptr, size=5;
+   
+   ptr = fun(size);
+   
+   for (int i=0; i<size; i++)
+   cout<<ptr[i]<<endl;
+
+    return 0;
+}
