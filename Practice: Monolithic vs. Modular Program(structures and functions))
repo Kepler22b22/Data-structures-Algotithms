@@ -1,0 +1,121 @@
+// 1: monolithic program
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    int length=0, breadth=0;
+    
+    cout<<"Enter length and breadth "<<endl;
+    cin>>length>>breadth;
+    
+    int area = length * breadth;
+    int peri = 2 * (length + breadth);
+    
+    cout<<"Area = "<<area<<endl;
+    cout<<"Peri = "<<peri<<endl;
+
+    return 0;
+}
+
+
+// 2: Modular Program
+#include <iostream>
+using namespace std;
+
+struct Rectangle
+{
+    int length;
+    int breadth;
+};
+
+void initialize(struct Rectangle *r, int l, int b)
+{
+    r->length = l;
+    r->breadth = b;
+}
+
+int area(struct Rectangle r)
+{
+    return r.length*r.breadth;
+}
+
+int perimeter(Rectangle r)
+{
+    int p;
+    p = 2 * (r.length + r.breadth);
+    
+    return p;
+}
+
+int main()
+{
+
+    Rectangle r={0, 0};
+    
+    int l, b;
+    cout<<"Enter length and breadth "<<endl;
+    cin>>l>>b;
+    
+    initialize(&r, l, b);
+    
+    int a = area(r);
+    int peri = perimeter(r);
+    
+    cout<<"Area = "<<a<<endl;
+    cout<<"Peri = "<<peri<<endl;
+
+    return 0;
+}
+
+
+
+// 3: object oriented program
+class Rectangle
+{
+public:
+    int length;
+    int breadth;
+
+void initialize(int l, int b)
+{
+    length = l;
+    breadth = b;
+}
+
+int area()
+{
+    return length*breadth;
+}
+
+int perimeter()
+{
+    int p;
+    p = 2 * (length + breadth);
+    
+    return p;
+}
+
+};
+
+int main()
+{
+
+    Rectangle r;
+    
+    int l, b;
+    cout<<"Enter length and breadth "<<endl;
+    cin>>l>>b;
+    
+    r.initialize(l, b);
+    
+    int a = r.area();
+    int peri = r.perimeter();
+    
+    cout<<"Area = "<<a<<endl;
+    cout<<"Peri = "<<peri<<endl;
+
+    return 0;
+}
+
