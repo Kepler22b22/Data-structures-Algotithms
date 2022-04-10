@@ -1,0 +1,20 @@
+
+#include <iostream>
+using namespace std;
+
+int fun(int n)
+{
+    if(n>100)
+        return n-10;
+    else
+        return fun(fun(n+11));
+}
+
+
+int main()
+{
+    int r;
+    r = fun(300);         // 输入小于等于101的数字结果永远是91……
+    cout<<r<<endl;
+    return 0;
+}
