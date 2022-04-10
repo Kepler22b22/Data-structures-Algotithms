@@ -1,5 +1,6 @@
-# Data-structures-Algotithms
-Mastering Data Structures &amp; Algorithms using C and C++ (Udemy)
-This is a place where I put some notes of these course. 
-Start from 6th Apr. 2022
-And to be continued...
+# Recursion
+1. Linear recursion: 
+- _tail recursion, head recursion, normal recursion_ 
+2. Tree recursion 
+3. Indirect recursion
+## And to be continued...
