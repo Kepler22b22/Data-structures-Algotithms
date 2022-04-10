@@ -1,0 +1,29 @@
+
+#include <iostream>
+using namespace std;
+
+double e(int x, int n)            // 使用loop
+{
+    int s=1;
+    for (; n>0; n--)
+    {
+        s = 1 + x/n*s;
+    }
+    return s;
+}
+
+double e1(int x, int n)           // 使用递归
+{
+    static double s;
+    if(n==0)
+        return s;
+    else
+        s = 1 + x*s/n;            // 所有的operation都要在ascending阶段完成
+        return e1(x, n-1);
+}
+
+int main()
+{
+    cout<<e1(3, 10)<<endl;   
+    return 0;
+}
